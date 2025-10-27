@@ -30,7 +30,7 @@ jobs:
       - name: Extract ShareLaTeX version
         id: version
         run: |
-          VERSION=$(grep -oP 'FROM sharelatex/sharelatex:\K[0-9.]+' Dockerfile)
+          VERSION=$(grep -oP 'FROM sharelatex/sharelatex:\K[0-9]+\.[0-9]+\.[0-9]+' Dockerfile)
           echo "sharelatex_version=$VERSION" >> $GITHUB_OUTPUT
           echo "Extracted ShareLaTeX version: $VERSION"
 
